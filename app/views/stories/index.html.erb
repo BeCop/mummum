@@ -1,31 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Stories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Our stories</h1>
 
-  <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.title %></td>
-        <td><%= story.content %></td>
-        <td><%= story.picture %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Story', new_story_path %>
+<% @stories.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |story| %>
+          <div class="col-md-4">
+            <%= image_tag story.picture_url, width: '100%' if story.picture.present?%>
+            <h4><%= link_to story.title, story %></h4>
+            <%= story.content %>
+          </div>
+      <% end %>
+    </div>
+<% end %>

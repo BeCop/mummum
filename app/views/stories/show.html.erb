@@ -1,19 +1,17 @@
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@story.picture_url, width: '100%') if @story.picture.present? %>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @story.content %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@story.picture_url, :width => 600) if @story.picture.present? %>
-</p>
-
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @story.title %></p>
+    <p><b>Description: </b><%= @story.content %></p>
+    <p>
+      <%= link_to 'Edit', edit_story_path(@story) %> |
+      <%= link_to 'Destroy', @story, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', stories_path %>
+    </p>
+  </div>
+</div>
