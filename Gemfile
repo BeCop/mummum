@@ -37,6 +37,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use devise to authenticate
 gem 'devise'
 
+# Use this gem to interact with js
+gem 'therubyracer'
+
+# Use omniauth to authenticate
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
