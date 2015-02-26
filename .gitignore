@@ -15,3 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore DS_SRE
+.DS_Store
+public/.DS_STORE
+.gitignore.swp

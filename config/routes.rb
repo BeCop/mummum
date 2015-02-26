@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {:omniauth_callbacks => "callbacks"}
+
+  devise_for :users, :controllers => {:omniauth_callbacks => "authentications"}
+	devise_scope :user do
+		resources :authentications, :path => 'authentications'
+	end
   resources :stories
 
   # The priority is based upon order of creation: first created -> highest priority.
