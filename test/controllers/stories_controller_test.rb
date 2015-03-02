@@ -1,9 +1,13 @@
 require 'test_helper'
 
 class StoriesControllerTest < ActionController::TestCase
-  setup do
-    @story = stories(:one)
-  end
+	include Devise::TestHelpers
+
+  def setup
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in users(:mum)
+		@story = stories(:one)
+  end  
 
   test "should get index" do
     get :index
