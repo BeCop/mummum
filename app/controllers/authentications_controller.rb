@@ -47,10 +47,8 @@ class AuthenticationsController < Devise::OmniauthCallbacksController
   # DELETE /authentications/1.json
   def destroy
     @authentication.destroy
-    respond_to do |format|
-      format.html { redirect_to authentications_url, notice: 'Authentication was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+		flash[:notice] = 'Authentication was successfully destroyed'
+		respond_with(@authentication, :location => authentications_url)
   end
 
   private

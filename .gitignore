@@ -20,3 +20,6 @@
 .DS_Store
 public/.DS_STORE
 .gitignore.swp
+
+# Ignore local variables
+config/environment_variables.yml
