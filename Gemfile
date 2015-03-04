@@ -45,6 +45,9 @@ gem 'therubyracer'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# Use delayed job to queue jobs
+gem 'delayed_job_active_record'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

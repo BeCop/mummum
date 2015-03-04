@@ -26,4 +26,9 @@ class User < ActiveRecord::Base
 	def password_required?
 		(authentications.empty? || !password.blank?) && super
 	end
+
+	after_create :send_admin_mail
+  def send_admin_mail
+		SendEmailJob.set(wait: 20.seconds).perform_later(self)
+  end
 end
