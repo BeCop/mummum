@@ -43,6 +43,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  url: <%= ENV['MEOI_PROD_DATABASE_URL'] %>
