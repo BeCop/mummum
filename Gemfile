@@ -3,8 +3,6 @@ ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'mysql2'
 # Use carrierwave to upload picture
 gem 'carrierwave'
 # Use SCSS for stylesheets
@@ -47,7 +45,11 @@ gem 'omniauth-facebook'
 # Use delayed job to queue jobs
 gem 'delayed_job_active_record'
 
+# Use figaro to manage environment variables
 gem 'figaro'
+
+# Use pg to manage Active Record
+gem 'pg', '0.15.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,6 +63,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
