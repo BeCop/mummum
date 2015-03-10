@@ -23,3 +23,6 @@ public/.DS_STORE
 
 # Ignore local variables
 config/environment_variables.yml
+
+# Ignore application configuration
+/config/application.yml
